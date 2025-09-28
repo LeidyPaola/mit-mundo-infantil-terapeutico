@@ -59,7 +59,7 @@ function ChatIA() {
           }}
           textInput={{ placeholder: { text: "Escribe un mensaje..." } }}
           connect={{
-            url: "http://localhost:5000/chat",
+            url: `${process.env.REACT_APP_API_URL || "http://localhost:5000"}/chat`,
             method: "POST",
             headers: {
               "Content-Type": "application/json",
