@@ -20,11 +20,12 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17"
   },
-  "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "client": "react-scripts start",
-    "server": "cd src/backend && npm start"
-  },
+"scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
+},
   "eslintConfig": {
     "extends": [
       "react-app",
