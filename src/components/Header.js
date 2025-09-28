@@ -1,20 +1,25 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const navLinkClass = ({ isActive }) =>
+    isActive
+      ? "text-green-300 font-semibold border-b-2 border-green-300 transition-colors"
+      : "hover:text-blue-200 transition-colors";
+
   return (
     <header className="bg-blue-600 text-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
+        <NavLink to="/" className="flex items-center" onClick={() => setMenuOpen(false)}>
           <img src="/logo.png" alt="MIT Logo" className="w-14 h-14 mr-3" />
           <span className="text-xl md:text-2xl font-bold leading-tight">
             MIT <span className="hidden sm:inline">- Mundo Infantil Terapéutico</span>
           </span>
-        </Link>
+        </NavLink>
 
         {/* Botón menú (solo en móvil) */}
         <button
@@ -33,49 +38,29 @@ function Header() {
         >
           <ul className="flex flex-col md:flex-row gap-6 items-center p-4 md:p-0 text-lg font-medium">
             <li>
-              <Link
-                to="/"
-                className="hover:text-blue-200 transition-colors"
-                onClick={() => setMenuOpen(false)}
-              >
+              <NavLink to="/" className={navLinkClass} onClick={() => setMenuOpen(false)}>
                 Inicio
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
-                to="/hitos/"
-                className="hover:text-blue-200 transition-colors"
-                onClick={() => setMenuOpen(false)}
-              >
+              <NavLink to="/hitos" className={navLinkClass} onClick={() => setMenuOpen(false)}>
                 Hitos
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
-                to="/informacion/"
-                className="hover:text-blue-200 transition-colors"
-                onClick={() => setMenuOpen(false)}
-              >
+              <NavLink to="/informacion" className={navLinkClass} onClick={() => setMenuOpen(false)}>
                 Información
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
-                to="/chat/"
-                className="hover:text-blue-200 transition-colors"
-                onClick={() => setMenuOpen(false)}
-              >
+              <NavLink to="/chat" className={navLinkClass} onClick={() => setMenuOpen(false)}>
                 Chat IA
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
-                to="/recursos/"
-                className="hover:text-blue-200 transition-colors"
-                onClick={() => setMenuOpen(false)}
-              >
+              <NavLink to="/recursos" className={navLinkClass} onClick={() => setMenuOpen(false)}>
                 Recursos
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>
