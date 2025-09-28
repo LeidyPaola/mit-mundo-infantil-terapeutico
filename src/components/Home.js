@@ -100,7 +100,7 @@ function Home() {
                 de tu hijo.
               </p>
               <a
-                href="/hitos"
+                href="/hitos/"
                 className="mt-auto bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full transition"
               >
                 Ver más
@@ -125,7 +125,7 @@ function Home() {
                 para apoyar a tu hijo.
               </p>
               <a
-                href="/informacion"
+                href="/informacion/"
                 className="mt-auto bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full transition"
               >
                 Ver más
@@ -153,7 +153,7 @@ function Home() {
                 Disponible 24/7 para responder tus preguntas
               </p>
               <a
-                href="/chat"
+                href="/chat/"
                 className="mt-auto bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full shadow-md transition"
               >
                 Ir al chat
@@ -178,7 +178,7 @@ function Home() {
                 habilidades según la edad de tu hijo.
               </p>
               <a
-                href="/recursos"
+                href="/recursos/"
                 className="mt-auto bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full transition"
               >
                 Ver más
