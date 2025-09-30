@@ -1839,6 +1839,9 @@ export default function Recursos() {
   const [open, setOpen] = useState(false);
   const [condicionActiva, setCondicionActiva] = useState(null);
   const [tab, setTab] = useState("definicion");
+  const [condicionSeleccionada, setCondicionSeleccionada] = useState("");
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todas");
+
 
   const abrirModal = (condicion) => {
     setCondicionActiva(condicion);
@@ -1851,39 +1854,54 @@ export default function Recursos() {
     setOpen(false);
   };
 
-const renderContenido = (contenido) => {
-  if (!contenido) return null;
+  const renderContenido = (contenido) => {
+    if (!contenido) return null;
 
-  if (Array.isArray(contenido)) {
-    return contenido.map((item, index) => {
-      if (typeof item === "string") {
-        return <p key={index} className="mb-2">{item}</p>;
-      }
+    if (Array.isArray(contenido)) {
+      return contenido.map((item, index) => {
+        if (typeof item === "string") {
+          return <p key={index} className="mb-2">{item}</p>;
+        }
+        if (item.tipo === "texto") {
+          return <p key={index} className="mb-2">{item.contenido}</p>;
+        }
+        if (item.tipo === "lista") {
+          return (
+            <ul key={index} className="list-disc pl-5 mb-3 space-y-1">
+              {item.items.map((subItem, subIndex) => (
+                <li key={subIndex}>{subItem}</li>
+              ))}
+            </ul>
+          );
+        }
+        return null;
+      });
+    }
 
-      if (item.tipo === "texto") {
-        return <p key={index} className="mb-2">{item.contenido}</p>;
-      }
-
-      if (item.tipo === "lista") {
-        return (
-          <ul key={index} className="list-disc pl-5 mb-3 space-y-1">
-            {item.items.map((subItem, subIndex) => (
-              <li key={subIndex}>{subItem}</li>
-            ))}
-          </ul>
-        );
-      }
-
-      return null;
-    });
-  }
-
-  return <p className="mb-2">{contenido}</p>;
+    return <p className="mb-2">{contenido}</p>;
+  };
+  const coloresTabsActivos = {
+  definicion: "bg-blue-500 text-white border-2 border-blue-500",
+  causas: "bg-green-500 text-white border-2 border-green-500",
+  caracteristicas: "bg-purple-500 text-white border-2 border-purple-500",
+  sintomas: "bg-pink-500 text-white border-2 border-pink-500",
+  recomendaciones: "bg-yellow-500 text-white border-2 border-yellow-500",
+  recursos: "bg-indigo-500 text-white border-2 border-indigo-500",
 };
+
+const coloresTabsInactivos = {
+  definicion: "bg-white border-2 border-blue-300 text-gray-700 hover:bg-blue-100",
+  causas: "bg-white border-2 border-green-300 text-gray-700 hover:bg-green-100",
+  caracteristicas: "bg-white border-2 border-purple-300 text-gray-700 hover:bg-purple-100",
+  sintomas: "bg-white border-2 border-pink-300 text-gray-700 hover:bg-pink-100",
+  recomendaciones: "bg-white border-2 border-yellow-300 text-gray-700 hover:bg-yellow-100",
+  recursos: "bg-white border-2 border-indigo-300 text-gray-700 hover:bg-indigo-100",
+};
+
 
   return (
     <div className="p-6">
-      {/* Encabezado de la página */}
+      {/* Encabezado */}
       <div className="text-center max-w-[1400px] mx-auto mb-10">
         <motion.h1
           className="text-4xl font-bold text-center mb-6 text-blue-800"
@@ -1901,139 +1919,212 @@ const renderContenido = (contenido) => {
         >
           En esta sección encontrarás información clara y práctica sobre diversas
           condiciones neurológicas y del desarrollo que pueden presentarse en la
-          primera infancia. Cada recurso incluye una definición breve, posibles
-          causas, síntomas tempranos, recomendaciones y materiales de apoyo para
-          familias y cuidadores.
+          primera infancia.
         </motion.p>
       </div>
 
-      {/* Renderizado por categorías */}
-      {Object.entries(condiciones).map(([categoria, items]) => (
-        <div key={categoria} className="mb-12">
-          {/* Encabezado de cada categoría */}
-          <h2 className="text-2xl font-bold text-blue-700 mb-6">
-            {categoria === "neurodesarrollo" && "🧠 Trastornos del Neurodesarrollo"}
-            {categoria === "aprendizaje" && "📚 Trastornos del Aprendizaje"}
-            {categoria === "neurologicos" && "⚡ Trastornos Neurológicos"}
-            {categoria === "sensoriales" && "👂👁️ Trastornos Sensoriales"}
-          </h2>
-
-          {/* Grid de tarjetas de esa categoría */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {items.map((cond) => (
-              <div
-                key={cond.id}
-                className="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center hover:shadow-2xl transition cursor-pointer"
-                onClick={() => abrirModal(cond)}
-              >
-                <img
-                  src={cond.imagen}
-                  alt={cond.titulo}
-                  className="w-40 h-40 object-contain mb-4"
-                />
-                <h2 className="text-xl font-bold">{cond.titulo}</h2>
-                <p className="text-gray-600">{cond.resumen}</p>
-                <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                  Ver más
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-
-{/* Modal */}
-{open && condicionActiva && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div className="bg-white rounded-lg p-6 w-11/12 md:w-3/4 lg:w-2/3 max-h-[90vh] overflow-y-auto relative">
-      
-      {/* Botón de cierre sticky sin fondo */}
-      <button
-        className="sticky top-2 right-2 ml-auto block text-gray-600 hover:text-gray-900 text-xl font-bold z-20 bg-transparent"
-        onClick={cerrarModal}
-      >
-        ✖
-      </button>
-
-      <h2 className="text-2xl font-bold mb-4">{condicionActiva.titulo}</h2>
-
-      {/* Tabs */}
-      <div className="flex gap-3 mb-4 border-b pb-2 flex-wrap">
-        {["definicion", "causas", "caracteristicas", "sintomas", "recomendaciones", "recursos"].map((t) => (
-          <button
-            key={t}
-            className={`px-3 py-1 rounded-lg ${
-              tab === t ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-700"
-            }`}
-            onClick={() => setTab(t)}
+      {/* Selectores */}
+      <div className="flex flex-col md:flex-row gap-4 max-w-[800px] mx-auto mb-10">
+        {/* Filtro por categoría */}
+        <div className="flex-1">
+          <label className="block mb-2 text-gray-700 font-semibold">
+            Filtrar por categoría:
+          </label>
+          <select
+            value={categoriaSeleccionada}
+            onChange={(e) => {
+              setCategoriaSeleccionada(e.target.value);
+              setCondicionSeleccionada(""); // reset condición
+            }}
+            className="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
           >
-            {t.charAt(0).toUpperCase() + t.slice(1)}
-          </button>
-        ))}
-      </div>
+            <option value="todas">Todas las categorías</option>
+            <option value="neurodesarrollo">🧠 Trastornos del Neurodesarrollo</option>
+            <option value="aprendizaje">📚 Trastornos del Aprendizaje</option>
+            <option value="neurologicos">⚡ Trastornos Neurológicos</option>
+            <option value="sensoriales">👂👁️ Trastornos Sensoriales</option>
+          </select>
+        </div>
 
+{/* Filtro por condición */}
+<div className="flex-1">
+  <label className="block mb-2 text-gray-700 font-semibold">
+    Filtrar por condición:
+  </label>
+  <select
+    value={condicionSeleccionada}
+    onChange={(e) => setCondicionSeleccionada(e.target.value)}
+    className="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+  >
+    <option value="">Todas las condiciones</option>
 
+    {Object.entries(condiciones)
+      .filter(
+        ([categoria]) =>
+          categoriaSeleccionada === "todas" || categoria === categoriaSeleccionada
+      )
+      .map(([categoria, items]) => {
+        // Mapeo de nombres bonitos con emojis
+        const nombresCategorias = {
+          neurodesarrollo: "🧠 Trastornos del Neurodesarrollo",
+          aprendizaje: "📚 Trastornos del Aprendizaje",
+          neurologicos: "⚡ Trastornos Neurológicos",
+          sensoriales: "👂👁️ Trastornos Sensoriales",
+        };
 
-{/* Contenido dinámico */}
-<div className="text-gray-700">
-  {tab === "definicion" && (
-  <div className="space-y-4">
-    <div>{renderContenido(condicionActiva.detalle.definicion)}</div>
-
-    {condicionActiva.detalle.definicionPuntos && (
-      <div className="pl-5">
-        {renderContenido(condicionActiva.detalle.definicionPuntos)}
-      </div>
-    )}
-  </div>
-)}
-
-  {tab === "causas" && renderContenido(condicionActiva.detalle.causas)}
-    {tab === "caracteristicas" && renderContenido(condicionActiva.detalle.caracteristicas)}
-  {tab === "sintomas" && renderContenido(condicionActiva.detalle.sintomas)}
-  {tab === "recomendaciones" && renderContenido(condicionActiva.detalle.recomendaciones)}
-
-  {tab === "recursos" && (
-    <div>
-      <h3 className="font-semibold mb-2">Videos</h3>
-      <div className="grid md:grid-cols-2 gap-4 mb-4">
-{condicionActiva.detalle.recursos?.videos?.map((video, index) => (
-  <div key={index}>
-    <iframe
-      src={video.url}
-      title={video.titulo}
-      className="w-full h-64 rounded-lg"
-      allowFullScreen
-    ></iframe>
-    <h4 className="font-semibold mt-2">{video.titulo}</h4>
-    {video.descripcion && (
-      <p className="text-gray-600 text-sm mt-1">{video.descripcion}</p>
-    )}
-  </div>
-))}
-
-      </div>
-      <h3 className="font-semibold mb-2">PDFs descargables</h3>
-<ul className="space-y-2">
-  {condicionActiva.detalle.recursos.pdfs.map((pdf, i) => (
-    <li key={i}>
-      <a
-        href={pdf.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 text-blue-600 hover:underline"
-      >
-        <Download size={18} />
-        <span>{pdf.nombre}</span>
-      </a>
-    </li>
-  ))}
-</ul>
-
-    </div>
-  )}
+        return (
+          <optgroup
+            key={categoria}
+            label={nombresCategorias[categoria] || categoria}
+          >
+            {items.map((cond) => (
+              <option key={cond.id} value={cond.titulo}>
+                {cond.titulo}
+              </option>
+            ))}
+          </optgroup>
+        );
+      })}
+  </select>
 </div>
 
+
+      </div>
+
+      {/* Renderizado de tarjetas */}
+      {Object.entries(condiciones)
+        .filter(([categoria]) => categoriaSeleccionada === "todas" || categoria === categoriaSeleccionada)
+        .map(([categoria, items]) => {
+          const itemsFiltrados = condicionSeleccionada
+            ? items.filter((cond) => cond.titulo === condicionSeleccionada)
+            : items;
+
+          if (itemsFiltrados.length === 0) return null;
+
+          return (
+            <div key={categoria} className="mb-12">
+              <h2 className="text-2xl font-bold text-blue-700 mb-6">
+                {categoria === "neurodesarrollo" && "🧠 Trastornos del Neurodesarrollo"}
+                {categoria === "aprendizaje" && "📚 Trastornos del Aprendizaje"}
+                {categoria === "neurologicos" && "⚡ Trastornos Neurológicos"}
+                {categoria === "sensoriales" && "👂👁️ Trastornos Sensoriales"}
+              </h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {itemsFiltrados.map((cond) => (
+                  <div
+                    key={cond.id}
+                    className="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center hover:shadow-2xl transition cursor-pointer"
+                    onClick={() => abrirModal(cond)}
+                  >
+                    <img
+                      src={cond.imagen}
+                      alt={cond.titulo}
+                      className="w-40 h-40 object-contain mb-4"
+                    />
+                    <h2 className="text-xl font-bold">{cond.titulo}</h2>
+                    <p className="text-gray-600">{cond.resumen}</p>
+                    <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700">
+                      Ver más
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+
+      {/* Modal */}
+      {open && condicionActiva && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 w-11/12 md:w-3/4 lg:w-2/3 max-h-[90vh] overflow-y-auto relative">
+<motion.button
+  whileHover={{ scale: 1.2 }}
+  whileTap={{ scale: 0.9 }}
+  className="sticky top-2 right-2 ml-auto flex items-center justify-center 
+             w-10 h-10 rounded-full border border-gray-400 
+             text-gray-600 hover:text-gray-900 hover:bg-gray-200 
+             text-xl font-bold z-20 bg-white shadow"
+  onClick={cerrarModal}
+>
+  ✖
+</motion.button>
+
+
+
+            <h2 className="text-2xl font-bold mb-4">{condicionActiva.titulo}</h2>
+
+            {/* Tabs */}
+            <div className="flex gap-3 mb-4 border-b pb-2 flex-wrap ">
+              {["definicion", "causas", "caracteristicas", "sintomas", "recomendaciones", "recursos"].map((t) => (
+  <motion.button
+    key={t}
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className={`px-3 py-1 rounded-full font-semibold transition-all duration-300 ${
+      tab === t ? coloresTabsActivos[t] : coloresTabsInactivos[t]
+    }`}
+    onClick={() => setTab(t)}
+  >
+    {t.charAt(0).toUpperCase() + t.slice(1)}
+  </motion.button>
+))}
+
+            </div>
+
+            {/* Contenido dinámico */}
+            <div className="text-gray-700 ">
+              {tab === "definicion" && (
+                <div className="space-y-4">
+                  <div>{renderContenido(condicionActiva.detalle.definicion)}</div>
+                  {condicionActiva.detalle.definicionPuntos && (
+                    <div className="pl-5">{renderContenido(condicionActiva.detalle.definicionPuntos)}</div>
+                  )}
+                </div>
+              )}
+              {tab === "causas" && renderContenido(condicionActiva.detalle.causas)}
+              {tab === "caracteristicas" && renderContenido(condicionActiva.detalle.caracteristicas)}
+              {tab === "sintomas" && renderContenido(condicionActiva.detalle.sintomas)}
+              {tab === "recomendaciones" && renderContenido(condicionActiva.detalle.recomendaciones)}
+
+              {tab === "recursos" && (
+                <div>
+                  <h3 className="font-semibold mb-2">Videos</h3>
+                  <div className="grid md:grid-cols-2 gap-4 mb-4">
+                    {condicionActiva.detalle.recursos?.videos?.map((video, index) => (
+                      <div key={index}>
+                        <iframe
+                          src={video.url}
+                          title={video.titulo}
+                          className="w-full h-64 rounded-lg"
+                          allowFullScreen
+                        ></iframe>
+                        <h4 className="font-semibold mt-2">{video.titulo}</h4>
+                        {video.descripcion && (
+                          <p className="text-gray-600 text-sm mt-1">{video.descripcion}</p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                  <h3 className="font-semibold mb-2">PDFs descargables</h3>
+                  <ul className="space-y-2">
+                    {condicionActiva.detalle.recursos.pdfs.map((pdf, i) => (
+                      <li key={i}>
+                        <a
+                          href={pdf.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-blue-600 hover:underline"
+                        >
+                          <Download size={18} />
+                          <span>{pdf.nombre}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}
