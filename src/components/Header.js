@@ -43,22 +43,22 @@ function Header() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/hitos" className={navLinkClass} onClick={() => setMenuOpen(false)}>
+              <NavLink to="/hitos/" className={navLinkClass} onClick={() => setMenuOpen(false)}>
                 Hitos
               </NavLink>
             </li>
             <li>
-              <NavLink to="/informacion" className={navLinkClass} onClick={() => setMenuOpen(false)}>
+              <NavLink to="/informacion/" className={navLinkClass} onClick={() => setMenuOpen(false)}>
                 Información
               </NavLink>
             </li>
             <li>
-              <NavLink to="/chat" className={navLinkClass} onClick={() => setMenuOpen(false)}>
+              <NavLink to="/chat/" className={navLinkClass} onClick={() => setMenuOpen(false)}>
                 Chat IA
               </NavLink>
             </li>
             <li>
-              <NavLink to="/recursos" className={navLinkClass} onClick={() => setMenuOpen(false)}>
+              <NavLink to="/recursos/" className={navLinkClass} onClick={() => setMenuOpen(false)}>
                 Recursos
               </NavLink>
             </li>
