@@ -597,6 +597,14 @@ function Desarrollo({ titulo, colorFondo, colorTexto, videoSrc, edades, resumen 
     }
   };
 
+  const coloresContenedor = {
+  Motor: "bg-blue-50 border-t-4 border-blue-400",
+  Lenguaje: "bg-green-50 border-t-4 border-green-400",
+  Cognitivo: "bg-purple-50 border-t-4 border-purple-400",
+  "Social y Emocional": "bg-pink-50 border-t-4 border-pink-400",
+  "Habilidades Adaptativas": "bg-yellow-50 border-t-4 border-yellow-400",
+};
+
    return (
     <motion.div
       className="container mx-auto px-6 py-6"
@@ -605,12 +613,13 @@ function Desarrollo({ titulo, colorFondo, colorTexto, videoSrc, edades, resumen 
       transition={{ duration: 0.6 }}
     >
       {/* CARD PRINCIPAL CON RESUMEN Y VIDEO */}
-      <motion.div
-        className={`${colorFondo} rounded-lg shadow-lg p-6 mb-10`}
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
+<motion.div
+  className={`rounded-xl shadow-lg p-8 mb-10 transition-all duration-500 ${coloresContenedor[titulo]}`}
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.5 }}
+>
+
         <h2 className={`text-3xl font-bold ${colorTexto} mb-6 text-center`}>
           {titulo}
         </h2>
@@ -780,18 +789,29 @@ const coloresHover = {
   "Habilidades Adaptativas": "hover:bg-yellow-200",
 };
 
+
 // ======== COMPONENTE PRINCIPAL ========
 function Hitos() {
   const [seleccionado, setSeleccionado] = useState("Motor");
   const desarrolloActual = tiposDesarrollo.find((d) => d.nombre === seleccionado);
 
-  const coloresBotones = {
-    Motor: "bg-blue-500 hover:bg-blue-600",
-    Lenguaje: "bg-green-500 hover:bg-green-600",
-    Cognitivo: "bg-purple-500 hover:bg-purple-600",
-    "Social y Emocional": "bg-pink-500 hover:bg-pink-600",
-    "Habilidades Adaptativas": "bg-yellow-500 hover:bg-yellow-600",
-  };
+ 
+
+  const coloresBotonesInactivos = {
+  Motor: "bg-white border-2 border-blue-500 text-blue-600",
+  Lenguaje: "bg-white border-2 border-green-500 text-green-600",
+  Cognitivo: "bg-white border-2 border-purple-500 text-purple-600",
+  "Social y Emocional": "bg-white border-2 border-pink-500 text-pink-600",
+  "Habilidades Adaptativas": "bg-white border-2 border-yellow-500 text-yellow-600",
+};
+
+const coloresBotonesActivos = {
+  Motor: "bg-blue-500 text-white shadow-md",
+  Lenguaje: "bg-green-500 text-white shadow-md",
+  Cognitivo: "bg-purple-500 text-white shadow-md",
+  "Social y Emocional": "bg-pink-500 text-white shadow-md",
+  "Habilidades Adaptativas": "bg-yellow-500 text-white shadow-md",
+};
 
   return (
     <div className="container mx-auto px-6 py-6">
@@ -817,34 +837,41 @@ function Hitos() {
       </motion.p>
 
       {/* CONTENEDOR DE BOTONES CON ANIMACIÓN EN CASCADA */}
-      <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6 text-white text-center font-semibold"
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.2 }, // retraso entre botones
-          },
-        }}
-      >
-        {tiposDesarrollo.map((tipo) => (
-          <motion.button
-            key={tipo.nombre}
-            className={`${coloresBotones[tipo.nombre]} py-4 rounded-lg shadow-lg transition`}
-            onClick={() => setSeleccionado(tipo.nombre)}
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            whileHover={{ scale: 1.08 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {tipo.nombre}
-          </motion.button>
-        ))}
-      </motion.div>
+<motion.div
+  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6 text-center font-semibold"
+  initial="hidden"
+  animate="visible"
+  variants={{
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 },
+    },
+  }}
+>
+  {tiposDesarrollo.map((tipo) => (
+    <motion.button
+      key={tipo.nombre}
+      onClick={() => setSeleccionado(tipo.nombre)}
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+      className={`px-6 py-2 rounded-full font-semibold shadow-md transition-all duration-300
+        ${
+          seleccionado === tipo.nombre
+            ? coloresBotonesActivos[tipo.nombre]
+            : coloresBotonesInactivos[tipo.nombre]
+        }`}
+    >
+      {tipo.nombre}
+    </motion.button>
+  ))}
+</motion.div>
+
 
       {/* RENDERIZAR EL DESARROLLO SELECCIONADO */}
       {desarrolloActual && (
