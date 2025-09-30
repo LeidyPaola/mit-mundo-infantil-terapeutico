@@ -8,10 +8,12 @@ import Hitos from "./components/Hitos";
 import ChatIA from "./components/ChatIA";
 import Recursos from "./components/Recursos";
 import Informacion from "./components/Informacion";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop /> 
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
