@@ -1881,12 +1881,12 @@ export default function Recursos() {
     return <p className="mb-2">{contenido}</p>;
   };
   const coloresTabsActivos = {
-  definicion: "bg-blue-500 text-white border-2 border-blue-500",
-  causas: "bg-green-500 text-white border-2 border-green-500",
-  caracteristicas: "bg-purple-500 text-white border-2 border-purple-500",
-  sintomas: "bg-pink-500 text-white border-2 border-pink-500",
-  recomendaciones: "bg-yellow-500 text-white border-2 border-yellow-500",
-  recursos: "bg-indigo-500 text-white border-2 border-indigo-500",
+  definicion: "bg-blue-500 text-white border-2 border-blue-500 shadow-lg",
+  causas: "bg-green-500 text-white border-2 border-green-500 shadow-lg",
+  caracteristicas: "bg-purple-500 text-white border-2 border-purple-500 shadow-lg",
+  sintomas: "bg-pink-500 text-white border-2 border-pink-500 shadow-lg",
+  recomendaciones: "bg-yellow-500 text-white border-2 border-yellow-500 shadow-lg",
+  recursos: "bg-indigo-500 text-white border-2 border-indigo-500 shadow-lg",
 };
 
 const coloresTabsInactivos = {
