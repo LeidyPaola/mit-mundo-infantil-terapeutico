@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Download } from "lucide-react"; 
+
 
 
 export default function Informacion() {
@@ -505,9 +506,18 @@ return (
     </motion.div>
 
     {/* Contenedor dinámico para el contenido por rango */}
-    <div
-      className={`transition-all duration-500 rounded-xl shadow-lg p-8 ${coloresContenedor[rangoEdad]}`}
-    >
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={rangoEdad}
+        className={`rounded-xl shadow-lg p-8 ${coloresContenedor[rangoEdad]}`}
+        initial={{ opacity: 0, y: 20, scale: 0.95 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: -20, scale: 0.95 }}
+        transition={{ duration: 0.5 }}
+      >
+     
+
+
 
       {/* Videos YouTube */}
       {data.videosYouTube?.length > 0 && (
@@ -776,8 +786,10 @@ return (
           </div>
         </motion.section>
       )}
+    </motion.div>
+    </AnimatePresence>
     </div>
-    </div>
+    
   );
 }
 
