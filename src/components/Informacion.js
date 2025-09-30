@@ -765,17 +765,17 @@ return (
             {data.pdfs.map((pdf, i) => (
               <div
                 key={i}
-                className="bg-white shadow-md p-4 rounded-lg flex flex-col items-center text-center hover:shadow-lg transition"
+                className="bg-white shadow-md p-6 rounded-lg flex flex-col items-center text-center hover:shadow-lg transition"
               >
                 <img
                   src={pdf.imagen || "/informacion/pdf_icon.png"}
                   alt={pdf.nombre}
                   className="w-24 h-24 object-contain mb-3 rounded"
                 />
-                <h3 className="font-semibold text-gray-800">{pdf.nombre}</h3>
+                <h3 className="font-semibold text-gray-800 p-3">{pdf.nombre}</h3>
                 <a
                   href={pdf.link}
-                  className="flex items-center gap-2 px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition"
+                  className="flex items-center gap-2 px-4 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
