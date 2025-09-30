@@ -798,19 +798,19 @@ function Hitos() {
  
 
   const coloresBotonesInactivos = {
-  Motor: "bg-white border-2 border-blue-500 text-blue-600",
-  Lenguaje: "bg-white border-2 border-green-500 text-green-600",
-  Cognitivo: "bg-white border-2 border-purple-500 text-purple-600",
-  "Social y Emocional": "bg-white border-2 border-pink-500 text-pink-600",
-  "Habilidades Adaptativas": "bg-white border-2 border-yellow-500 text-yellow-600",
+  Motor: "bg-white border-2 border-blue-500 text-blue-700 hover:bg-blue-100",
+  Lenguaje: "bg-white border-2 border-green-500 text-green-700 hover:bg-green-100",
+  Cognitivo: "bg-white border-2 border-purple-500 text-purple-700 hover:bg-purple-100",
+  "Social y Emocional": "bg-white border-2 border-pink-500 text-pink-700 hover:bg-pink-100",
+  "Habilidades Adaptativas": "bg-white border-2 border-yellow-500 text-yellow-700 hover:bg-yellow-100",
 };
 
 const coloresBotonesActivos = {
-  Motor: "bg-blue-500 text-white shadow-md",
-  Lenguaje: "bg-green-500 text-white shadow-md",
-  Cognitivo: "bg-purple-500 text-white shadow-md",
-  "Social y Emocional": "bg-pink-500 text-white shadow-md",
-  "Habilidades Adaptativas": "bg-yellow-500 text-white shadow-md",
+  Motor: "bg-blue-500 text-white shadow-lg",
+  Lenguaje: "bg-green-500 text-white shadow-lg",
+  Cognitivo: "bg-purple-500 text-white shadow-lg",
+  "Social y Emocional": "bg-pink-500 text-white shadow-lg",
+  "Habilidades Adaptativas": "bg-yellow-500 text-white shadow-lg",
 };
 
   return (
