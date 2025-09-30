@@ -1890,12 +1890,12 @@ export default function Recursos() {
 };
 
 const coloresTabsInactivos = {
-  definicion: "bg-white border-2 border-blue-300 text-gray-700 hover:bg-blue-100",
-  causas: "bg-white border-2 border-green-300 text-gray-700 hover:bg-green-100",
-  caracteristicas: "bg-white border-2 border-purple-300 text-gray-700 hover:bg-purple-100",
-  sintomas: "bg-white border-2 border-pink-300 text-gray-700 hover:bg-pink-100",
-  recomendaciones: "bg-white border-2 border-yellow-300 text-gray-700 hover:bg-yellow-100",
-  recursos: "bg-white border-2 border-indigo-300 text-gray-700 hover:bg-indigo-100",
+  definicion: "bg-white border-2 border-blue-300 text-blue-700 hover:bg-blue-100",
+  causas: "bg-white border-2 border-green-300 text-green-700 hover:bg-green-100",
+  caracteristicas: "bg-white border-2 border-purple-300 text-purple-700 hover:bg-purple-100",
+  sintomas: "bg-white border-2 border-pink-300 text-pink-700 hover:bg-pink-100",
+  recomendaciones: "bg-white border-2 border-yellow-300 text-yellow-700 hover:bg-yellow-100",
+  recursos: "bg-white border-2 border-indigo-300 text-indigo-700 hover:bg-indigo-100",
 };
 
 
