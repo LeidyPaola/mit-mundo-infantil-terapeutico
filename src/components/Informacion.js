@@ -314,12 +314,12 @@ pdf: [
   pdfs: [
     { 
       nombre: "Colores", 
-      link: "/informacion/colores.pdf", 
-      imagen: "/informacion/colores.jpg" },
+      link: "/informacion/Colores.pdf", 
+      imagen: "/informacion/Colores.jpg" },
     { 
       nombre: "Números", 
       link: "/informacion/Numeros.pdf", 
-      imagen: "/informacion/numeros.jpg" },
+      imagen: "/informacion/Numeros.jpg" },
     { 
       nombre: "ABC", 
       link: "/informacion/ABC.pdf", 
@@ -437,8 +437,8 @@ pdf: [
       },
       {
         nombre: "Partes del cuerpo",
-        link: "/informacion/partes_del_cuerpo1.pdf",
-        imagen: "/informacion/partes_del_cuerpo1.jpg",
+        link: "/informacion/Partes_del_cuerpo1.pdf",
+        imagen: "/informacion/Partes_del_cuerpo1.jpg",
       },
     ],
   },
