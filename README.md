@@ -1,59 +1,117 @@
 # MIT – Mundo Infantil Terapéutico 🌱
 
-MIT es una plataforma web educativa diseñada para orientar a padres, madres, cuidadores, estudiantes y profesionales en temas de desarrollo infantil y neurodiversidad.
+MIT – Mundo Infantil Terapéutico es una plataforma web educativa e informativa diseñada para brindar orientación a padres, madres, cuidadores, estudiantes y profesionales en temas relacionados con el desarrollo infantil y la neurodiversidad.
 
-Ofrece información estructurada, recursos educativos, hitos del desarrollo y una sección de preguntas frecuentes (FAQ) basada en contenido confiable.
+La plataforma centraliza información estructurada, recursos educativos, hitos del desarrollo y una sección de preguntas frecuentes (FAQ), con el objetivo de facilitar el acceso a contenido confiable y organizado.
 
 ---
 
-## 🌐 Funcionalidades principales
+## 🌐 Demo del proyecto
 
-### 👶 Hitos del desarrollo
-Consulta los principales hitos del desarrollo infantil organizados por edades.
+🔗 Plataforma en producción:  
+https://mit-mundo-infantil-terapeutico.vercel.app/
 
-### 🧠 Información sobre neurodivergencias
-Contenido educativo sobre TEA, TDAH, lenguaje y otras condiciones del desarrollo.
+🔗 Repositorio:  
+https://github.com/LeidyPaola/mit-mundo-infantil-terapeutico
 
-### ❓ FAQ (Preguntas frecuentes)
-Sección con respuestas claras y organizadas sobre desarrollo infantil y neurodiversidad.
+---
+
+## 🧩 Funcionalidades principales
+
+### 👶 Hitos del desarrollo infantil
+Consulta organizada de etapas del desarrollo infantil según edad y habilidades esperadas.
+
+### 🧠 Neurodivergencias
+Información educativa sobre TEA, TDAH, lenguaje y otras condiciones del neurodesarrollo.
+
+### ❓ Preguntas frecuentes (FAQ)
+Sección interactiva con respuestas claras sobre desarrollo infantil y neurodiversidad.
 
 ### 📚 Recursos educativos
-Material dividido por neurodivergencias con:
+Material educativo organizado por categorías que incluye:
 
-- Definición  
-- Causas  
-- Características  
-- Síntomas  
-- Recomendaciones  
-- Videos y PDFs descargables  
+- Definiciones
+- Características
+- Síntomas
+- Recomendaciones
+- Videos educativos
+- Documentos PDF descargables
 
 ---
 
-## 🧱 Tecnologías utilizadas
+## 🏗️ Arquitectura del sistema
 
-- React.js (Create React App)
+El sistema está basado en una arquitectura cliente-servidor:
+
+- Frontend: React.js
+- Backend: Node.js + Express
+- Base de datos y almacenamiento: Firebase
+- Despliegue: Vercel
+- Control de versiones: Git + GitHub
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- React.js
 - React Router DOM
-- Framer Motion (animaciones)
+- Framer Motion
 - React Icons
 - Tailwind CSS
-- Node.js (backend local)
-- Vercel (despliegue)
+- Node.js
+- Express.js
+- Firebase
+- Vercel
+- Git / GitHub
 
 ---
 
-## 🚀 Instalación local
+## 🚀 Instalación y ejecución local
 
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/LeidyPaola/mit-mundo-infantil-terapeutico.git
+```
+
+### 2. Acceder al proyecto
+```bash
+cd mit-mundo-infantil-terapeutico
+```
+
+### 3. Instalar dependencias
 ```bash
 npm install
+```
+
+### 4. Ejecutar en desarrollo
+```bash
 npm start
+```
 
-📦 Construcción de producción
+---
+
+## 📦 Construcción para producción
+
+```bash
 npm run build
-🌍 Despliegue
+```
 
-Este proyecto está optimizado para Vercel.
+---
 
-👤 Autor
+## 🌍 Despliegue
 
-MIT – Mundo Infantil Terapéutico
-© 2026
+Este proyecto está desplegado en Vercel, lo que permite integración continua desde GitHub y actualización automática del sistema.
+
+---
+
+## 👤 Autor
+
+Leidy Paola Silva Malaver  
+Ingeniera de Sistemas  
+MIT – Mundo Infantil Terapéutico  
+
+---
+
+## 📄 Licencia
+
+Proyecto de carácter académico y educativo. Todos los derechos reservados © 2026.
