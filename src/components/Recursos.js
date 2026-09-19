@@ -930,6 +930,117 @@ recursos: {
 }
 
   }
+},
+{
+  id: 10,
+  titulo: "Síndrome de Rett",
+  resumen: "Trastorno genético del neurodesarrollo que afecta principalmente el desarrollo neurológico y las habilidades motoras y comunicativas.",
+  imagen: "/recursos/sindrome-rett.jpg",
+
+  detalle: {
+    definicion: "El síndrome de Rett es un trastorno genético del neurodesarrollo que afecta principalmente a niñas y suele estar relacionado con alteraciones en el gen MECP2. Después de un período inicial de desarrollo aparentemente típico, pueden aparecer una desaceleración o pérdida de habilidades adquiridas, especialmente en el lenguaje, el uso intencional de las manos y las habilidades motoras.",
+
+    definicionPuntos: [
+      {
+        tipo: "texto",
+        contenido: "El síndrome de Rett suele comenzar a manifestarse después de los primeros meses de vida, aunque la evolución puede variar entre personas."
+      },
+      {
+        tipo: "lista",
+        items: [
+          "Pérdida o disminución de habilidades manuales adquiridas.",
+          "Dificultades en el lenguaje y la comunicación.",
+          "Alteraciones en la coordinación y el movimiento.",
+          "Movimientos repetitivos de las manos.",
+          "Dificultades en la marcha y el equilibrio."
+        ]
+      },
+      {
+        tipo: "texto",
+        contenido: "Aunque puede producir una discapacidad significativa, las capacidades y necesidades de apoyo pueden variar entre personas."
+      }
+    ],
+
+    causas: [
+      {
+        tipo: "lista",
+        items: [
+          "En la mayoría de los casos está relacionado con una variante genética en el gen MECP2.",
+          "Generalmente aparece como consecuencia de una variante genética nueva y no heredada de los padres.",
+          "Es una condición genética y no es causada por la crianza."
+        ]
+      }
+    ],
+
+    caracteristicas: [
+      {
+        tipo: "lista",
+        items: [
+          "Pérdida progresiva del uso intencional de las manos.",
+          "Movimientos repetitivos de las manos.",
+          "Dificultades en el lenguaje.",
+          "Problemas de coordinación motora.",
+          "Dificultades para caminar o mantener el equilibrio.",
+          "Alteraciones en la comunicación social.",
+          "Posibles dificultades respiratorias, gastrointestinales o del sueño."
+        ]
+      }
+    ],
+
+    sintomas: [
+      {
+        tipo: "lista",
+        items: [
+          "Disminución de habilidades previamente adquiridas.",
+          "Movimientos repetitivos de las manos.",
+          "Dificultad para utilizar las manos de manera funcional.",
+          "Pérdida o disminución del lenguaje.",
+          "Alteraciones de la marcha.",
+          "Problemas de coordinación.",
+          "Convulsiones en algunas personas."
+        ]
+      }
+    ],
+
+    recomendaciones: [
+      {
+        tipo: "lista",
+        items: [
+          "Seguimiento médico multidisciplinario.",
+          "Terapia física para mantener movilidad y prevenir complicaciones.",
+          "Terapia ocupacional para favorecer la autonomía y participación.",
+          "Apoyo en comunicación mediante sistemas aumentativos y alternativos cuando sea necesario.",
+          "Adaptaciones del entorno para facilitar la movilidad y seguridad.",
+          "Acompañamiento a la familia y coordinación con la escuela."
+        ]
+      }
+    ],
+
+    recursos: {
+      videos: [
+     {
+      url: "https://www.youtube.com/embed/A1h-z9s9UUA?si=f4kt275kEbEqjrgZ",
+      titulo: "Síndrome de Rett: qué es y cuál es su impacto",
+      descripcion: "Video informativo que explica qué es el síndrome de Rett, cómo puede afectar el desarrollo infantil y cuáles son algunas de sus principales manifestaciones y necesidades de apoyo."
+    },
+    {
+      url: "https://www.youtube.com/embed/uo8WQeNZpLM?si=hMC8M0ac_LUivXy0",
+      titulo: "SÍNDROME DE RETT | Draw My Life",
+      descripcion: "Explicación visual y sencilla sobre el síndrome de Rett que presenta sus principales características, la evolución de la condición y algunos de los cambios que pueden aparecer durante el desarrollo."
+    },
+    {
+      url: "https://www.youtube.com/embed/uAzNJQaPuEE?si=p3pHJdN9lx4nX9_V",
+      titulo: "Síndrome de Rett",
+      descripcion: "Video educativo que aborda de manera general el síndrome de Rett, sus características y las dificultades que puede generar en áreas como la comunicación, el movimiento y el desarrollo."
+    }
+  ],
+  pdfs: [
+    { nombre: "SINDROME DE RETT: CRITERIOS DIAGNOSTICOS", link: "/recursos/sindrome-rett.pdf" },
+    { nombre: "SINDROME DE RETT", link: "/recursos/SINDROME DE RETT.pdf" },
+    { nombre: "Sindrome de Rett, una mirada actual", link: "/recursos/Sindrome de Rett, una mirada actual.pdf" }
+  ]
+    }
+  }
 }
 
 
@@ -938,7 +1049,7 @@ recursos: {
   aprendizaje: [
     
 {
-  id: 10,
+  id: 11,
   titulo: "Disgrafía",
   resumen: "Dificultad específica en la escritura motriz y grafomotora que afecta la legibilidad, el ritmo y la organización del texto.",
   imagen: "/recursos/disgrafia.jpg",
@@ -1035,7 +1146,7 @@ recursos: {
 },
 
 {
-  id: 11,
+  id: 12,
   titulo: "Disortografía",
   resumen: "Dificultad específica de aprendizaje que afecta la correcta aplicación de las reglas ortográficas, a pesar de una enseñanza y escolarización adecuadas.",
   imagen: "/recursos/disortografia.jpg",
@@ -1136,7 +1247,7 @@ recursos: {
 },
 
 {
-  id: 12,
+  id: 13,
   titulo: "Discalculia",
   resumen: "Dificultad específica del aprendizaje que afecta la adquisición y manejo de conceptos numéricos y habilidades matemáticas.",
   imagen: "/recursos/discalculia.jpg",
@@ -1236,7 +1347,7 @@ recursos: {
 },
 
 {
-  id: 13,
+  id: 14,
   titulo: "Dislexia",
   resumen: "Dificultad específica del aprendizaje que afecta la precisión, fluidez y comprensión lectora.",
   imagen: "/recursos/dislexia.jpg",
@@ -1334,7 +1445,7 @@ recursos: {
   neurologicos: [
     
    {
-  id: 14,
+  id: 15,
   titulo: "Trastorno de Tics / Tourette",
   resumen: "Trastorno neurológico caracterizado por movimientos o vocalizaciones involuntarias repetitivas y persistentes.",
   imagen: "/recursos/tourette.jpg",
@@ -1435,7 +1546,7 @@ recursos: {
 },
 
 {
-  id: 15,
+  id: 16,
   titulo: "Trastorno Obsesivo-Compulsivo Infantil (TOC/TEOc)",
   resumen: "Pensamientos obsesivos y conductas repetitivas que interfieren en la vida diaria.",
   imagen: "/recursos/toc.jpg",
@@ -1531,7 +1642,7 @@ videos: [
 },
 
 {
-  id: 16,
+  id: 17,
   titulo: "Epilepsia Infantil",
   resumen: "Trastorno neurológico caracterizado por crisis convulsivas recurrentes en la niñez.",
   imagen: "/recursos/epilepsia.jpg",
@@ -1634,7 +1745,7 @@ videos: [
     
     
 {
-  id: 17,
+  id: 18,
   titulo: "Discapacidad Auditiva",
   resumen: "Dificultad parcial o total para percibir sonidos, que puede afectar el desarrollo del lenguaje y la comunicación en la infancia.",
   imagen: "/recursos/discapacidad_auditiva.jpg",
@@ -1734,7 +1845,7 @@ videos: [
 },
 
    {
-  id: 18,
+  id: 19,
   titulo: "Discapacidad Visual",
   resumen: "Limitación parcial o total de la visión que afecta el desarrollo, el aprendizaje y la interacción social en la infancia.",
   imagen: "/recursos/discapacidad_visual.jpg",
@@ -1833,10 +1944,10 @@ videos: [
   }
 },
 {
-  id: 19,
+  id: 20,
   titulo: "Síndrome de Waardenburg",
   resumen: "Condición genética que puede causar pérdida auditiva y diferencias en la pigmentación de los ojos, el cabello y la piel.",
-  imagen: "/recursos/waardenburg.jpg",
+  imagen: "/recursos/sindrome_waardenburg.jpg",
 
   detalle: {
     definicion: "El síndrome de Waardenburg es un grupo de condiciones genéticas que pueden afectar la audición y producir diferencias en la pigmentación de los ojos, el cabello y la piel. Las características pueden variar considerablemente entre las personas, incluso dentro de una misma familia. Existen cuatro tipos principales, y algunos pueden presentar características adicionales.",
@@ -1929,13 +2040,31 @@ videos: [
     ],
 
     recursos: {
-      videos: [],
-      pdfs: []
+      videos: [
+    {
+      url: "https://www.youtube.com/embed/p0jJd_4oRFw?si=1yU2L2hq-jAmp298",
+      titulo: "Síndrome de Waardenburg",
+      descripcion: "Video informativo que presenta el síndrome de Waardenburg, sus principales características y la relación entre la pérdida auditiva y las alteraciones de la pigmentación."
+    },
+    {
+      url: "https://www.youtube.com/embed/tgi66pCwCiQ?si=CGVfPVLaVK5-nqQt",
+      titulo: "Síndrome de Waardenburg Video Informativo Español",
+      descripcion: "Material educativo en español que explica de forma general el síndrome de Waardenburg, sus manifestaciones y algunos de los aspectos que pueden presentarse en las personas con esta condición genética."
+    },
+    {
+      url: "https://www.youtube.com/embed/CIGRV5djfBU?si=wIhzgjPpoH4CA6qD",
+      titulo: "SINDROME DE WAARDENBURG ?",
+      descripcion: "Video introductorio sobre el síndrome de Waardenburg que permite conocer sus características principales, incluyendo las diferencias de pigmentación y la posible afectación de la audición."
+    }
+  ],
+      pdfs: [
+        { nombre: "Síndrome de Waardenburg: las discapacidades y el aspecto físico, su vinculación con el rendimiento académico y las relaciones sociales", link: "/recursos/Sindrome_de_Waardenburg_las_discapacidades_y_el_as.pdf" },
+        { nombre: "Síndrome Waardenburg. Presentación de una familia afectada", link: "/recursos/sindrome_waardenburg.pdf" },
+        { nombre: "Enfermedades raras Síndromede Waardenburg", link: "/recursos/EnfermedadesrarasSíndromedeWaardenburg.pdf" }
+      ]
     }
   }
-},
-    
-
+}
   ]
 };
 export default function Recursos() {
