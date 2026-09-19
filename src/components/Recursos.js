@@ -1831,7 +1831,110 @@ videos: [
       ]
     }
   }
-}
+},
+{
+  id: 19,
+  titulo: "Síndrome de Waardenburg",
+  resumen: "Condición genética que puede causar pérdida auditiva y diferencias en la pigmentación de los ojos, el cabello y la piel.",
+  imagen: "/recursos/waardenburg.jpg",
+
+  detalle: {
+    definicion: "El síndrome de Waardenburg es un grupo de condiciones genéticas que pueden afectar la audición y producir diferencias en la pigmentación de los ojos, el cabello y la piel. Las características pueden variar considerablemente entre las personas, incluso dentro de una misma familia. Existen cuatro tipos principales, y algunos pueden presentar características adicionales.",
+
+    definicionPuntos: [
+      {
+        tipo: "texto",
+        contenido: "Otros nombres: síndrome de Waardenburg, síndrome de Klein-Waardenburg (tipo III) y síndrome de Waardenburg-Shah (tipo IV)."
+      },
+      {
+        tipo: "texto",
+        contenido: "Características principales:"
+      },
+      {
+        tipo: "lista",
+        items: [
+          "Pérdida auditiva neurosensorial, que puede estar presente desde el nacimiento.",
+          "Diferencias en el color de los ojos, como heterocromía o iris de color azul muy claro.",
+          "Mechón de cabello blanco o aparición temprana de canas.",
+          "Zonas de menor pigmentación en la piel en algunas personas.",
+          "Algunas personas pueden presentar características faciales particulares."
+        ]
+      },
+      {
+        tipo: "texto",
+        contenido: "Tipos: se reconocen cuatro tipos principales. Los tipos I y II comparten muchas características; el tipo III puede incluir alteraciones de las extremidades y el tipo IV puede asociarse con la enfermedad de Hirschsprung."
+      },
+      {
+        tipo: "texto",
+        contenido: "La presencia y combinación de características varía entre las personas. No todas las personas con síndrome de Waardenburg presentan pérdida auditiva o los mismos cambios de pigmentación."
+      }
+    ],
+
+    causas: [
+      {
+        tipo: "lista",
+        items: [
+          "Es causado por variantes genéticas que participan en el desarrollo de los melanocitos y otras estructuras durante el desarrollo embrionario.",
+          "Puede estar relacionado con variantes en genes como PAX3, MITF, SNAI2, SOX10, EDN3 y EDNRB.",
+          "En muchos casos se hereda de forma autosómica dominante.",
+          "Algunos casos de los tipos II y IV pueden presentar herencia autosómica recesiva.",
+          "En algunos casos pueden aparecer variantes genéticas nuevas sin antecedentes familiares."
+        ]
+      }
+    ],
+
+    caracteristicas: [
+      {
+        tipo: "lista",
+        items: [
+          "Pérdida auditiva neurosensorial de grado variable.",
+          "Heterocromía: ojos de diferente color o diferencias de pigmentación dentro de un mismo iris.",
+          "Ojos de color azul muy claro en algunas personas.",
+          "Mechón de cabello blanco o cambios tempranos en la coloración del cabello.",
+          "Zonas de piel con menor pigmentación.",
+          "Características faciales particulares en algunos tipos.",
+          "Las manifestaciones pueden ser diferentes incluso entre familiares con la misma condición."
+        ]
+      }
+    ],
+
+    sintomas: [
+      {
+        tipo: "lista",
+        items: [
+          "Dificultad para oír o pérdida auditiva desde el nacimiento.",
+          "No responder adecuadamente a sonidos o al llamado por su nombre cuando existe pérdida auditiva.",
+          "Dificultades en el desarrollo del lenguaje relacionadas con una pérdida auditiva no identificada o no apoyada.",
+          "Diferencias visibles en el color de los ojos.",
+          "Mechón de cabello blanco o cambios prematuros en la pigmentación.",
+          "Zonas de piel más claras en algunas personas.",
+          "En el tipo IV, pueden presentarse problemas intestinales asociados con la enfermedad de Hirschsprung."
+        ]
+      }
+    ],
+
+    recomendaciones: [
+      {
+        tipo: "lista",
+        items: [
+          "Realizar una evaluación auditiva para identificar oportunamente cualquier pérdida de audición.",
+          "Mantener seguimiento audiológico y otorrinolaringológico según las necesidades de cada niño.",
+          "Utilizar audífonos, implantes cocleares u otras ayudas auditivas cuando estén indicados.",
+          "Iniciar oportunamente apoyo fonoaudiológico y estrategias de comunicación cuando exista pérdida auditiva.",
+          "Adaptar el entorno educativo utilizando apoyos visuales y estrategias de comunicación accesibles.",
+          "Realizar valoración genética y asesoramiento genético cuando esté indicado.",
+          "Brindar acompañamiento a la familia y coordinar los apoyos entre los servicios de salud y la escuela."
+        ]
+      }
+    ],
+
+    recursos: {
+      videos: [],
+      pdfs: []
+    }
+  }
+},
+    
 
   ]
 };
